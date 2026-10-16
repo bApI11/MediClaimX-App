@@ -18,4 +18,9 @@ public interface BillService {
                                BillRequestDTO requestDto);
 
     void deleteBill(Long billId);
+
+    BillResponseDTO getBillByPatientId(Long patientId);
+
+    List<BillResponseDTO> getBillsByClaimNumber(String claimNumber);
+
 }

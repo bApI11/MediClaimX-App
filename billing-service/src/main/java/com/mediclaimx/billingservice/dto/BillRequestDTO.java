@@ -23,5 +23,7 @@ public class BillRequestDTO {
 
     private BigDecimal insuranceCoveredAmount;
 
+    private BigDecimal patientPayableAmount;
+
     private String description;
 }
