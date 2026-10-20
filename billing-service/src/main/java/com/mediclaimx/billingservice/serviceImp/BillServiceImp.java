@@ -43,6 +43,9 @@ public class BillServiceImp implements BillService {
         if(coverAmount == null || coverAmount.compareTo(BigDecimal.ZERO) == 0){
             throw new RuntimeException("Cover amount must be greater than zero");
         }
+        if (patientPayableAmount == null) {
+            throw new RuntimeException("Patient payable amount must be greater than zero");
+        }
         if(coverAmount.add(patientPayableAmount).compareTo(totalAmount) != 0){
             throw new RuntimeException("PatientPayable amount plus cover amount equal to total amount");
         }
@@ -50,7 +53,7 @@ public class BillServiceImp implements BillService {
         Bill bill = new Bill();
         bill.setPatientId(requestDto.getPatientId());
         bill.setPolicyId(requestDto.getPolicyId());
-        bill.setBillType(requestDto.getBillType());
+        bill.setClaimId(requestDto.getClaimId());
         bill.setBillType(requestDto.getBillType());
         bill.setTotalAmount(totalAmount);
         bill.setInsuranceCoveredAmount(coverAmount);
@@ -170,6 +173,7 @@ public class BillServiceImp implements BillService {
         billResponseDTO.setPatientId(bill.getPatientId());
         billResponseDTO.setBillId(bill.getBillId());
         billResponseDTO.setBillType(bill.getBillType());
+        billResponseDTO.setBillStatus(bill.getBillStatus());
         billResponseDTO.setDescription(bill.getDescription());
         billResponseDTO.setTotalAmount(bill.getTotalAmount());
         billResponseDTO.setInsuranceCoveredAmount(bill.getInsuranceCoveredAmount());

@@ -18,6 +18,8 @@ public class PaymentRequestDTO {
 
     private Long patientId;
 
+    private String email;
+
     private BigDecimal amount;
 
     private PaymentMethod paymentMethod;

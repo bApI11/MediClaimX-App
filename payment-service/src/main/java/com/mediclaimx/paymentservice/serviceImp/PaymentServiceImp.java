@@ -1,5 +1,7 @@
 package com.mediclaimx.paymentservice.serviceImp;
 
+import com.mediclaimx.paymentservice.client.NotificationClient;
+import com.mediclaimx.paymentservice.dto.NotificationRequestDTO;
 import com.mediclaimx.paymentservice.dto.PaymentRequestDTO;
 import com.mediclaimx.paymentservice.dto.PaymentResponseDTO;
 import com.mediclaimx.paymentservice.entity.Payment;
@@ -21,6 +23,7 @@ public class PaymentServiceImp implements PaymentService {
 
     private PaymentRepository paymentRepository;
     private PaymentMapper paymentMapper;
+    private final NotificationClient notificationClient;
 
     @Override
     public PaymentResponseDTO createPayment(PaymentRequestDTO request) {
@@ -32,6 +35,14 @@ public class PaymentServiceImp implements PaymentService {
         payment.setPaymentStatus(PaymentStatus.PENDING);
         payment.setPaymentDate(LocalDateTime.now());
         Payment savedPayment= paymentRepository.save(payment);
+
+        NotificationRequestDTO notificationRequestDTO = NotificationRequestDTO.builder()
+                .patientId(request.getPatientId())
+                .email(request.getEmail())
+                .subject("Payment Successful")
+                .message("Your payment of Rs." + savedPayment.getAmount() + "has been received .")
+                .build();
+        notificationClient.sendNotification(notificationRequestDTO);
 
         return paymentMapper.toResponseDTO(savedPayment);
     }
@@ -81,4 +92,5 @@ public class PaymentServiceImp implements PaymentService {
     public void deletePaymentById(Long paymentId) {
         paymentRepository.deleteById(paymentId);
     }
+
 }
