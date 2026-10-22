@@ -4,20 +4,28 @@ import com.mediclaimx.hospitalservice.dto.HospitalRequestDTO;
 import com.mediclaimx.hospitalservice.dto.HospitalResponseDTO;
 import com.mediclaimx.hospitalservice.entity.Hospital;
 import com.mediclaimx.hospitalservice.enums.HospitalStatus;
+import com.mediclaimx.hospitalservice.enums.VisitStatus;
 import com.mediclaimx.hospitalservice.enums.HospitalType;
+import com.mediclaimx.hospitalservice.feign.PatientClient;
+import com.mediclaimx.hospitalservice.feign.StaffClient;
+import com.mediclaimx.hospitalservice.kafka.HospitalEventPublisher;
 import com.mediclaimx.hospitalservice.repository.HospitalRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.mediclaimx.hospitalservice.repository.QueueRepository;
+import com.mediclaimx.hospitalservice.util.VisitNumberGenerator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
+@Transactional
 public class HospitalService {
 
-    @Autowired
-    private HospitalRepository hospitalRepository;
+    private final HospitalRepository hospitalRepository;
 
     // Create Hospital
     public HospitalResponseDTO createHospital(HospitalRequestDTO hospitalRequestDTO) {
@@ -41,7 +49,6 @@ public class HospitalService {
         if (existingPhone.isPresent()) {
             throw new RuntimeException("Phone already exists");
         }
-
         // Create new hospital
         Hospital hospital = new Hospital();
         hospital.setName(hospitalRequestDTO.getName());
@@ -147,7 +154,7 @@ public class HospitalService {
     }
 
     // Get Hospitals by Status
-    public List<HospitalResponseDTO> getHospitalsByStatus(HospitalStatus status) {
+    public List<HospitalResponseDTO> getHospitalsByStatus(VisitStatus status) {
         if (status == null) {
             throw new RuntimeException("Status is required");
         }

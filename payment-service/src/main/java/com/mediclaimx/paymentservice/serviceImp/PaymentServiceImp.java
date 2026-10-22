@@ -1,6 +1,8 @@
 package com.mediclaimx.paymentservice.serviceImp;
 
+import com.mediclaimx.paymentservice.client.BillingClient;
 import com.mediclaimx.paymentservice.client.NotificationClient;
+import com.mediclaimx.paymentservice.dto.BillResponseDTO;
 import com.mediclaimx.paymentservice.dto.NotificationRequestDTO;
 import com.mediclaimx.paymentservice.dto.PaymentRequestDTO;
 import com.mediclaimx.paymentservice.dto.PaymentResponseDTO;
@@ -24,12 +26,16 @@ public class PaymentServiceImp implements PaymentService {
     private PaymentRepository paymentRepository;
     private PaymentMapper paymentMapper;
     private final NotificationClient notificationClient;
+    private final BillingClient billingClient;
 
     @Override
     public PaymentResponseDTO createPayment(PaymentRequestDTO request) {
         if (request == null) {
             throw new RuntimeException("Payment request data must required");
         }
+        BillResponseDTO bill = billingClient.
+
+        if(request.getAmount().compareTo(pati))
         Payment payment= paymentMapper.toEntity(request);
         payment.setTransactionId(TransectionIdGenerator.transectionIdGenerator());
         payment.setPaymentStatus(PaymentStatus.PENDING);

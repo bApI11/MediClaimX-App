@@ -5,26 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="623d4016-b5e5-41b6-b924-5280bc395e0a" name="Changes" comment="add billService implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/dto/CreateVisitRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/billing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/mediclaimx/billingservice/serviceImp/BillServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/mediclaimx/billingservice/serviceImp/BillServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claim-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/claim-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claim-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/claim-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurance-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/insurance-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/mediclaimx/billingservice/BillingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/mediclaimx/billingservice/BillingServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/HospitalServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/HospitalServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/controller/HospitalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/controller/HospitalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/dto/HospitalRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/dto/HospitalResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/dto/VisitResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/entity/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/entity/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/enums/HospitalStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/enums/VisitStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/repository/HospitalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/repository/HospitalRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/service/HospitalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospital-service/src/main/java/com/mediclaimx/hospitalservice/service/HospitalService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/test/java/com/mediclaimx/notificationservice/NotificationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/test/NotificationServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/PatientServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/PatientServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/dto/PatientRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/dto/PatientRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/mediclaimx/patientservice/service/PatientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/mediclaimx/paymentservice/PaymentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/mediclaimx/paymentservice/PaymentServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/mediclaimx/paymentservice/dto/PaymentRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/mediclaimx/paymentservice/dto/PaymentRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/mediclaimx/paymentservice/serviceImp/PaymentServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/mediclaimx/paymentservice/serviceImp/PaymentServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/controller/StaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/dto/LoginRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/dto/LoginRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/dto/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/dto/LoginResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/dto/StaffResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/dto/StaffResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/repository/StaffRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/src/main/java/com/mediclaimx/staffservice/repository/StaffRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staff-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/staff-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -66,55 +75,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in billing-service (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in billing-service.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in eureka-server (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in eureka-server.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in patient-service (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in patient-service (2).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in patient-service.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in payment-service (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in payment-service (2).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in payment-service.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BillingServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigServerApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.NotificationServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PatientServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PaymentServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Chandra/IdeaProjects/Projects/MediClaimX-App&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ConfigServerApplication.executor": "Run",
+    "JUnit.All in billing-service (1).executor": "Run",
+    "JUnit.All in billing-service.executor": "Run",
+    "JUnit.All in eureka-server (1).executor": "Run",
+    "JUnit.All in eureka-server.executor": "Run",
+    "JUnit.All in patient-service (1).executor": "Run",
+    "JUnit.All in patient-service (2).executor": "Run",
+    "JUnit.All in patient-service.executor": "Run",
+    "JUnit.All in payment-service (1).executor": "Run",
+    "JUnit.All in payment-service (2).executor": "Run",
+    "JUnit.All in payment-service.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.BillingServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication (1).executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.NotificationServiceApplication.executor": "Run",
+    "Spring Boot.PatientServiceApplication.executor": "Run",
+    "Spring Boot.PaymentServiceApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Chandra/IdeaProjects/Projects/MediClaimX-App",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chandra\IdeaProjects\Projects\MediClaimX-App\staff-service\src\main\java\com\mediclaimx\staffservice" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -131,6 +145,7 @@
             <map>
               <entry key="BillingServiceApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
+              <entry key="NotificationServiceApplication" value="FAILED" />
               <entry key="PatientServiceApplication" value="STOPPED" />
               <entry key="PaymentServiceApplication" value="STOPPED" />
             </map>
@@ -462,7 +477,7 @@
       <workItem from="1792231487075" duration="991000" />
       <workItem from="1792233648410" duration="6765000" />
       <workItem from="1792380899407" duration="7167000" />
-      <workItem from="1792390088121" duration="7047000" />
+      <workItem from="1792390088121" duration="49614000" />
     </task>
     <task id="LOCAL-00001" summary="add billService implementation">
       <option name="closed" value="true" />

@@ -29,5 +29,8 @@ public class PatientRequestDTO {
     private String medicalHistory;
     private String allergies;
     private String currentMedications;
+    private Long hospitalId;
+    private Long departmentId;
+    private Long patientId;
     private PatientStatus status;
 }

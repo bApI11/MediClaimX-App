@@ -26,15 +26,15 @@ public class StaffController {
     private StaffService staffService;
 
     // Staff Login
-    @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> loginStaff(@RequestBody LoginRequestDTO loginRequestDTO) {
-        try {
-            LoginResponseDTO response = staffService.loginStaff(loginRequestDTO);
-            return ResponseEntity.ok(response);
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-    }
+//    @PostMapping("/login")
+//    public ResponseEntity<LoginResponseDTO> loginStaff(@RequestBody LoginRequestDTO loginRequestDTO) {
+//        try {
+//            LoginResponseDTO response = staffService.loginStaff(loginRequestDTO);
+//            return ResponseEntity.ok(response);
+//        } catch (RuntimeException e) {
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+//        }
+//    }
 
     // Create Staff
     @PostMapping

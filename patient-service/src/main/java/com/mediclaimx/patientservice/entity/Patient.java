@@ -68,6 +68,10 @@ public class Patient {
     @Column(columnDefinition = "TEXT")
     private String currentMedications;
 
+    private Long hospitalId;
+
+    private Long assignedDoctorId;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private PatientStatus status;

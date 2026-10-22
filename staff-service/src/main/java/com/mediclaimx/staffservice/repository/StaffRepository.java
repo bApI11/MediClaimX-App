@@ -3,6 +3,7 @@ package com.mediclaimx.staffservice.repository;
 import com.mediclaimx.staffservice.entity.Staff;
 import com.mediclaimx.staffservice.enums.StaffRole;
 import com.mediclaimx.staffservice.enums.StaffStatus;
+import org.springframework.data.domain.Limit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +17,7 @@ public interface StaffRepository extends JpaRepository<Staff, Long> {
     List<Staff> findAllByRole(StaffRole role);
     List<Staff> findAllByStatus(StaffStatus status);
     boolean existsByEmail(String email);
+    Optional<Staff> findByName(String name);
+
+    Optional<Staff> findByEmailIgnoreCaseOrPhone(String email, String phone);
 }

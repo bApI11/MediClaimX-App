@@ -2,7 +2,8 @@ package com.mediclaimx.hospitalservice.repository;
 
 
 import com.mediclaimx.hospitalservice.entity.Hospital;
-import com.mediclaimx.hospitalservice.enums.HospitalStatus;
+import com.mediclaimx.hospitalservice.entity.Visit;
+import com.mediclaimx.hospitalservice.enums.VisitStatus;
 import com.mediclaimx.hospitalservice.enums.HospitalType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,7 +20,7 @@ public interface HospitalRepository extends JpaRepository<Hospital, Long> {
     Optional<Hospital> findByPhone(String phone);
     List<Hospital> findByNameContainingIgnoreCase(String name);
     List<Hospital> findByType(HospitalType type);
-    List<Hospital> findByStatus(HospitalStatus status);
+    List<Hospital> findByStatus(VisitStatus status);
     List<Hospital> findByCity(String city);
     List<Hospital> findByState(String state);
     List<Hospital> findByCountry(String country);

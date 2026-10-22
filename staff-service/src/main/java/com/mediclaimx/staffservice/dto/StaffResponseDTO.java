@@ -13,6 +13,7 @@ public class StaffResponseDTO {
     private String phone;
     private StaffRole role;
     private StaffStatus status;
+    private String specialization;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

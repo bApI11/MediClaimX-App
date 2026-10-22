@@ -1,12 +1,18 @@
 package com.mediclaimx.patientservice.service;
 
+import com.mediclaimx.patientservice.client.HospitalClient;
+import com.mediclaimx.patientservice.client.StaffClient;
+import com.mediclaimx.patientservice.dto.HospitalResponse;
 import com.mediclaimx.patientservice.dto.PatientRequestDTO;
 import com.mediclaimx.patientservice.dto.PatientResponseDTO;
+import com.mediclaimx.patientservice.dto.StaffResponse;
 import com.mediclaimx.patientservice.entity.Patient;
 import com.mediclaimx.patientservice.enums.BloodGroup;
 import com.mediclaimx.patientservice.enums.Gender;
 import com.mediclaimx.patientservice.enums.PatientStatus;
+import com.mediclaimx.patientservice.event.PatientRegisteredEvent;
 import com.mediclaimx.patientservice.repository.PatientRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +22,16 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class PatientService {
 
-    @Autowired
     private PatientRepository patientRepository;
 
+    private final HospitalClient hospitalClient;
+    private final StaffClient staffClient;
+
     // Create Patient
-    public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {
+    public PatientResponseDTO registerPatient(PatientRequestDTO patientRequestDTO) {
         // Basic validation
         if (patientRequestDTO == null) {
             throw new RuntimeException("Patient data is required");
@@ -38,6 +47,11 @@ public class PatientService {
         if (existingPhone.isPresent()) {
             throw new RuntimeException("Phone already exists");
         }
+        HospitalResponse hospitalResponse = hospitalClient.getHospital(patientRequestDTO.getHospitalId());
+        if(Boolean.FALSE.equals(hospitalResponse.getActive())){
+            throw new RuntimeException("Hospital is not active");
+        }
+        StaffResponse staffResponse = staffClient.getDoctorByDepartment(patientRequestDTO.getDepartmentId());
 
         // Create new patient
         Patient patient = new Patient();
@@ -57,9 +71,18 @@ public class PatientService {
         patient.setMedicalHistory(patientRequestDTO.getMedicalHistory());
         patient.setAllergies(patientRequestDTO.getAllergies());
         patient.setCurrentMedications(patientRequestDTO.getCurrentMedications());
+        patient.setHospitalId(hospitalResponse.getHospitalId());
+        patient.setAssignedDoctorId(staffResponse.getStaffId());
         patient.setStatus(patientRequestDTO.getStatus() != null ? patientRequestDTO.getStatus() : PatientStatus.ACTIVE);
 
         Patient savedPatient = patientRepository.save(patient);
+        PatientRegisteredEvent event = PatientRegisteredEvent.builder()
+                .patientId(savedPatient.getId())
+                .patientName(savedPatient.getFirstName())
+                .phoneNumber(savedPatient.getPhone())
+                .hospitalId(savedPatient.getHospitalId())
+                .doctorId(savedPatient.getAssignedDoctorId())
+                .build();
         return convertToResponseDTO(savedPatient);
     }
 

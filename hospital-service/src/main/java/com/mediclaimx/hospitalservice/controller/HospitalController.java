@@ -2,7 +2,7 @@ package com.mediclaimx.hospitalservice.controller;
 
 import com.mediclaimx.hospitalservice.dto.HospitalRequestDTO;
 import com.mediclaimx.hospitalservice.dto.HospitalResponseDTO;
-import com.mediclaimx.hospitalservice.enums.HospitalStatus;
+import com.mediclaimx.hospitalservice.enums.VisitStatus;
 import com.mediclaimx.hospitalservice.enums.HospitalType;
 import com.mediclaimx.hospitalservice.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,7 +98,7 @@ public class HospitalController {
 
     // Get Hospitals by Status
     @GetMapping("/status/{status}")
-    public ResponseEntity<List<HospitalResponseDTO>> getHospitalsByStatus(@PathVariable HospitalStatus status) {
+    public ResponseEntity<List<HospitalResponseDTO>> getHospitalsByStatus(@PathVariable VisitStatus status) {
         try {
             List<HospitalResponseDTO> hospitals = hospitalService.getHospitalsByStatus(status);
             return ResponseEntity.ok(hospitals);
@@ -186,7 +186,7 @@ public class HospitalController {
 
     // Update Hospital Status
     @PatchMapping("/{id}/status")
-    public ResponseEntity<HospitalResponseDTO> updateHospitalStatus(@PathVariable Long id, @RequestParam HospitalStatus status) {
+    public ResponseEntity<HospitalResponseDTO> updateHospitalStatus(@PathVariable Long id, @RequestParam VisitStatus status) {
         try {
             HospitalResponseDTO response = hospitalService.updateHospitalStatus(id, status);
             return ResponseEntity.ok(response);

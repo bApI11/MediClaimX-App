@@ -6,6 +6,7 @@ import com.mediclaimx.patientservice.enums.BloodGroup;
 import com.mediclaimx.patientservice.enums.Gender;
 import com.mediclaimx.patientservice.enums.PatientStatus;
 import com.mediclaimx.patientservice.service.PatientService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,16 +17,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/patients")
+@RequiredArgsConstructor
 public class PatientController {
 
-    @Autowired
     private PatientService patientService;
 
     // Create Patient
-    @PostMapping
-    public ResponseEntity<PatientResponseDTO> createPatient(@RequestBody PatientRequestDTO patientRequestDTO) {
+    @PostMapping("/register")
+    public ResponseEntity<PatientResponseDTO> registerPatient(@RequestBody PatientRequestDTO patientRequestDTO) {
         try {
-            PatientResponseDTO response = patientService.createPatient(patientRequestDTO);
+            PatientResponseDTO response = patientService.registerPatient(patientRequestDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().build();
