@@ -15,30 +15,22 @@ public class VisitEventPublisher {
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
-    public void publishVisitCreated(
-            Visit visit) {
+    public void publishVisitCreated(Visit visit) {
 
-        kafkaTemplate.send(
-                KafkaTopics.VISIT_CREATED,
+        kafkaTemplate.send(KafkaTopics.VISIT_CREATED,
 
                 VisitCreatedEvent.builder()
                         .visitId(visit.getId())
-                        .visitNumber(
-                                visit.getVisitNumber())
-                        .patientId(
-                                visit.getPatientId())
-                        .doctorId(
-                                visit.getDoctorId())
-                        .createdAt(
-                                LocalDateTime.now())
+                        .visitNumber(visit.getVisitNumber())
+                        .patientId(visit.getPatientId())
+                        .doctorId(visit.getDoctorId())
+                        .createdAt(LocalDateTime.now())
                         .build());
     }
 
-    public void publishDoctorAssigned(
-            Visit visit) {
+    public void publishDoctorAssigned(Visit visit) {
 
-        kafkaTemplate.send(
-                KafkaTopics.DOCTOR_ASSIGNED,
+        kafkaTemplate.send(KafkaTopics.DOCTOR_ASSIGNED,
 
                 DoctorAssignedEvent.builder()
                         .visitId(visit.getId())

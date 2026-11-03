@@ -12,22 +12,18 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class JwtService {
 
-    private final String SECRET =
-            "mysecretkeymysecretkeymysecretkey";
+    private final String SECRET = "mysecretkeymysecretkeymysecretkey";
 
-    public String generateToken(String username,
-                                String role) {
+    public String generateToken(String username, String role) {
 
         return Jwts.builder()
                 .setSubject(username)
                 .claim("role", role)
                 .setIssuedAt(new Date())
-                .setExpiration(
-                        new Date(System.currentTimeMillis()
+                .setExpiration(new Date(System.currentTimeMillis()
                                 + 86400000))
-                .signWith(
-                        Keys.hmacShaKeyFor(
-                                SECRET.getBytes()),
+                .signWith(Keys.hmacShaKeyFor(
+                        SECRET.getBytes()),
                         SignatureAlgorithm.HS256)
                 .compact();
     }

@@ -10,7 +10,7 @@ import com.mediclaimx.hospitalservice.enums.VisitStatus;
 import com.mediclaimx.hospitalservice.feign.PatientClient;
 import com.mediclaimx.hospitalservice.feign.StaffClient;
 import com.mediclaimx.hospitalservice.kafka.VisitEventPublisher;
-import com.mediclaimx.hospitalservice.repository.QueueRepository;
+import com.mediclaimx.hospitalservice.repository.ConsultationRepository;
 import com.mediclaimx.hospitalservice.repository.VisitRepository;
 import com.mediclaimx.hospitalservice.util.VisitNumberGenerator;
 import jakarta.transaction.Transactional;
@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class VisitService {
 
     private final VisitRepository visitRepository;
-    private final QueueRepository queueRepository;
+    private final ConsultationRepository queueRepository;
 
     private final PatientClient  patientClient;
     private final StaffClient staffClient;

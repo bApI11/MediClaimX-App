@@ -1,6 +1,7 @@
 package com.mediclaimx.authservice.controller;
 
 import com.mediclaimx.authservice.dto.LoginRequest;
+import com.mediclaimx.authservice.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +17,7 @@ public class AuthController {
     private final AuthenticationService authenticationService;
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(
+    public ResponseEntity<LoginRequest> login(
             @RequestBody LoginRequest request) {
 
         return ResponseEntity.ok(

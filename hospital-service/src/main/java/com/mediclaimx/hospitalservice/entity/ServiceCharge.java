@@ -1,17 +1,18 @@
 package com.mediclaimx.hospitalservice.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "consultation_queue")
+@Table(name = "service_charges")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConsultationQueue {
+@Builder
+public class ServiceCharge {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,14 +20,14 @@ public class ConsultationQueue {
 
     private Long visitId;
 
-    private Long doctorId;
+    private String serviceName;
 
-    private Integer tokenNumber;
+    private Double amount;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime chargedAt;
 
     @PrePersist
     public void prePersist() {
-        createdAt = LocalDateTime.now();
+        chargedAt = LocalDateTime.now();
     }
 }
